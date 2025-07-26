@@ -62,9 +62,25 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
 
     // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    //coil
+    implementation(libs.coil.compose)
+
+    //Glide
+    implementation (libs.glide)
+    kapt (libs.compiler)
+
+
+    implementation(libs.androidx.foundation)
+
+
+
 
 }

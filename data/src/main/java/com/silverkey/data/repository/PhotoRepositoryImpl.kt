@@ -13,9 +13,8 @@ class PhotoRepositoryImpl(
     private val api: PhotoApiService,
     private val dao: PhotoDao,
 ) : PhotoRepository {
-    override suspend fun fetchPhotosFromApi(): List<Photo> {
-        return api.getPhotos().photos.map { it.toDomain() }
-
+    override suspend fun fetchPhotosFromApi(page: Int, perPage: Int): List<Photo> {
+        return api.getPhotos(page = page, perPage = perPage).photos.map { it.toDomain() }
     }
 
     override suspend fun cachePhotos(photos: List<Photo>) {
